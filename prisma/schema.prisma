@@ -1,0 +1,23 @@
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "binary"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model category {
+  id   Int    @id(map: "category_pk") @default(autoincrement())
+  name String @unique @db.VarChar(255)
+  item item[]
+}
+
+model item {
+  id         Int      @id(map: "item_pk") @default(autoincrement())
+  name       String   @unique @db.VarChar(255)
+  categoryId Int
+  quantity   Int      @default(0)
+  category   category @relation(fields: [categoryId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "item_fk0")
+}
