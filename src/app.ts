@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import cors from "cors";
-import itemRouter from "./routers/item.router";
-import categoryRouter from "./routers/category.router";
+import itemRouter from "./routers/itemRouter";
+import categoryRouter from "./routers/categoryRouter";
 
 const app = express();
 app.use(cors());
