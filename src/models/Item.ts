@@ -1,5 +1,5 @@
 export default class Item {
-  id?: number;
+  id: number;
   name: string;
   categoryId: number;
   quantity: number;

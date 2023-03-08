@@ -1,5 +1,5 @@
 export default class Category {
-  id?: number;
+  id: number;
   name: string;
 
   constructor(id: number, name: string) {
