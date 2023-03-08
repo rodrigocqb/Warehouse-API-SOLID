@@ -6,7 +6,7 @@ import CreateCategoryService from "./createCategoryService";
 export default class CreateCategoryController {
   constructor(private createCategoryService: CreateCategoryService) {}
 
-  async handle(req: Request, res: Response) {
+  async handle(req: Request, res: Response): Promise<Response> {
     const { name } = req.body as ICategory;
 
     try {
