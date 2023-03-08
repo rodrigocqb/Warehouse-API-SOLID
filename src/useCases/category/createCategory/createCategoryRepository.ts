@@ -1,5 +1,4 @@
 import { prisma } from "../../../config/database";
-import ICategoryDTO from "../../../DTOs/CategoryDTO";
 import ICategory from "../../../interfaces/ICategory";
 import Category from "../../../models/Category";
 
