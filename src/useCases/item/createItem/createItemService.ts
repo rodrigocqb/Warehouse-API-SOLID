@@ -6,7 +6,7 @@ export default class CreateItemService {
   constructor(private createItemRepository: CreateItemRepository) {}
 
   async execute({ name, categoryId }: IItem): Promise<IItemDTO> {
-    if (!name || categoryId) throw new Error("Name and category required");
+    if (!name || !categoryId) throw new Error("Name and category required");
     const item = this.createItemRepository.create({ name, categoryId });
     return item;
   }
